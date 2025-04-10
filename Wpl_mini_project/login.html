@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Cricket Talent Hub</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+    </style>
+  <style>
+    body,html{
+      height: 100%;
+    }
+    *{
+      font-family: "Rubik", sans-serif;
+      color: white;
+    }
+    body {
+     background-image: url("login-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .nav ul {
+      display: flex;
+      list-style: none;
+      gap:30px;
+      padding: 20px;
+    }
+    a{
+      text-decoration: none;
+    }
+    .head{
+      display: flex;
+      justify-content: center;
+      font-size: 30px;
+      margin-bottom: 275px;
+      position: relative;
+      top:30px;
+    }
+    .box{
+      border: 2px solid black;
+     height:550px;
+     width:500px;
+     margin-left: 500px;
+     margin-top:10px ;
+     background-color:rgba(0 0 0 0.2);
+     border-radius: 20px;
+     box-shadow: 0 50px 110px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+    label{
+      font-size: larger;
+    }
+    .email{
+      margin-top: 10px;
+      font-weight: bolder;
+    }
+    .email-in{
+      position: relative;
+      top:-210px;
+      left:25px;
+      bottom: 100px;
+    }
+    .password{
+      margin-top: 10px;
+      font-weight: bolder;
+    }
+    .pass-in{
+      position: relative;
+      left:25px;
+      bottom: 175px;
+
+    }
+    .button  button{
+      color:black;
+      display: inline-block;
+    }
+    .button{
+      margin-left: 48px;
+      position: relative;
+      top:-130px;
+      left:25px;
+    }
+    button{
+      border: 2px solid black;
+      border-radius: 50px;
+      padding: 10px 40px;
+      background-color: black;
+    }
+    input{
+      border: 2px solid black;
+      border-radius: 50px;
+      padding: 10px 20px;
+      color: black;
+    }
+    a{
+      list-style: none;
+      text-decoration: none;
+    }
+    .p{
+      position: relative;
+      top:-90px;
+      left:10px;
+    }
+    .p a{
+      color:white;
+      font-weight: bold;
+      background-color:  black;
+      border-radius: 50px;
+      padding: 10px 20px;
+      opacity: 0.8;
+    }
+    .foot{
+      position: relative;
+      left:580px;
+      top:50px;
+    }
+    .p p{
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+      <nav>
+        <div class="nav">
+          <nav>
+          <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="contact.html" class="active">Contacts</a></li>
+          <li><a href="profile.html"> Profiles</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="login">
+    <div class="box">
+      <form action="login.html">
+        <div class="head"><h1>LOGIN</h1></div>
+        <div class="email-in">
+          <label for="email">Email:</label>
+        <div class="email">
+          <input type="text" id="email" placeholder="Email">
+        </div>
+        </div>
+        <div class="pass-in">
+          <label for="password">Password:</label>
+        <div class="password">
+          <input type="password" id="password" placeholder="Password">
+        </div>
+
+        </div>
+        <div class="button">
+          <button type="submit"><a href="home.html">Login</a></button>
+        </div>
+        <div class="p">
+          <p>Don't have an account? <a href="create-profile.html">SignUp</a></p>
+        </div>
+        
+
+
+      </form>
+
+    </div>
+  
+  </section>
+
+  <footer>
+    <div class="foot">
+      <p>&copy; 2025 Cricket Talent Hub. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
