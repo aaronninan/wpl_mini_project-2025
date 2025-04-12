@@ -8,12 +8,11 @@
     body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
   color: #333;
+  background-color: #2d63e0;
 }
 
-.about-section {
-  background-color: #2d63e0; /* Deep Green */
+.about-section { /* Deep Green */
   color: #fff;
   padding: 60px 20px;
   text-align: center;
@@ -59,10 +58,35 @@
   margin-top: 30px;
 }
 
+.nav li a{
+  color: white;
+  font-weight: 400;
+  border: 2px solid white;
+  border-radius: 40px;
+  padding: 10px 20px;
+  background-color: black;
+  text-decoration: none;
+}
+.nav li a:hover{
+background-color: gray;
+}
+li{
+  list-style: none;
+}
+.nav{
+  margin-top: 20px;
+}
+
 </style>
 </head>
 <body>
+  <div class="nav">
+    <nav>
+      <ul><li><a href="home.html">Home</a></li></ul>
+    </nav>
+  </div>
   <section class="about-section">
+    
     <div class="container">
       <h2>About Us</h2>
       <p class="intro">
@@ -84,4 +108,3 @@
   </section>
 </body>
 </html>
->

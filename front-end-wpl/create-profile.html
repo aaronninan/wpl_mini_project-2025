@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,26 +10,26 @@
   <script src="script.js" defer></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-    </style>
-  
+  </style>
+
   <style>
     :root {
       --color: black;
       --sec-color: white;
     }
-  
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: "Rubik", sans-serif;
     }
-  
+
     body {
       background-color: var(--color);
       color: var(--sec-color);
     }
-  
+
     .list {
       display: flex;
       list-style: none;
@@ -36,28 +37,32 @@
       padding: 10px;
       margin: 10px;
       position: absolute;
-      top:0px;
+      top: 0px;
     }
-  
+
     .list li a {
       text-decoration: none;
       color: var(--sec-color);
     }
-  
+
     .img img {
-      opacity: 0.3;
-      background-size: cover;
+      opacity: 0.25;
+      background-size: auto;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
     }
-  
+
+
     .head {
       text-align: center;
       margin-top: 20px;
       font-size: 25px;
       position: absolute;
-      top:100px;
-      left:575px;
+      top: 50px;
+      left: 575px;
     }
-  
+
     .form {
       display: flex;
       flex-direction: column;
@@ -65,37 +70,48 @@
       max-width: 500px;
       margin: 0px auto;
       margin-top: 40px;
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255, 255, 255, 0.134);
       padding: 40px;
       border-radius: 20px;
-      position: relative;
-      bottom:800px;
-      left:70px;
-      gap:25px;
+      position: absolute;
+      top: 100px;
+      left: 600px;
+      height: 550px;
+      gap: 25px;
+      border: 5px solid black;
     }
-  
+
     .form-group {
       display: flex;
       flex-direction: column;
       margin-bottom: 20px;
     }
-    .email{
+
+    .email {
       margin-top: -20px;
+      position: relative;
+      top: -30px;
     }
-    .name-input{
+
+    .name-input {
       padding: 25px;
+      position: relative;
+      top: -30px;
     }
-    .password-input{
-      margin-left:38px;
-      margin-bottom: 28px;
+
+    .password-input {
+      position: relative;
+      top:-30px;
+      left:56px;
     }
-  
+
     label {
       margin-bottom: 8px;
       font-weight: bold;
     }
-  
-    input , textarea {
+
+    input,
+    textarea {
       padding: 12px 16px;
       border: 2px solid var(--sec-color);
       border-radius: 50px;
@@ -103,31 +119,34 @@
       color: var(--sec-color);
       font-size: 16px;
     }
-  
+
     textarea {
       resize: vertical;
     }
-  
+
     .button {
       text-align: center;
-      margin-top: 30px;
+      position: relative;
+      top: 30px;
+      left:-10px;
     }
-  
-    button a{
+
+    button a {
       padding: 12px 30px;
       font-size: 16px;
       background-color: var(--color);
       color: var(--sec-color);
-      border: 2px solid var(--sec-color);
-      border-radius: 20px;
+      border: 3px solid var(--sec-color);
+      border-radius: 30px;
       cursor: pointer;
       text-decoration: none;
     }
-    a:hover{
+
+    a:hover {
       background-color: gray;
     }
-  
-  
+
+
     .foot {
       text-align: center;
       padding: 20px 0;
@@ -139,14 +158,18 @@
       color: black;
 
     }
-    .role{
+
+    .role {
       margin-top: 10px;
       margin-right: 50px;
+
     }
-    .option{
+
+    .option {
       color: black;
     }
-    select{
+
+    select {
       padding: 10px 50px;
       border: 2px solid var(--sec-color);
       border-radius: 80px;
@@ -155,113 +178,132 @@
       font-size: 16px;
       margin-left: 35px;
     }
-    .sel{
+
+    .sel {
       margin-left: 40px;
+      position: relative;
+      top: -5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     }
-    .input{
+
+    .input {
       margin-top: 10px;
     }
+    .input-sel{
+      position: relative;
+      right: 20px;
+    }
   </style>
-  
+
 </head>
+
 <body>
-  
+
   <header>
     <div class="container">
-        <nav>
-          <ul>
-            <div class="list">
-              <li><a href="home.html">Home</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="profile.html" class="active">Profile</a></li></div>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="all">
 
-  
+    </div>
+  </header>
+  <div class="all">
+    <div class="img">
+      <img src="create-profile.jpg" alt="error">
+    </div>
+    <nav>
+      <ul>
+        <div class="list">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </div>
+      </ul>
+    </nav>
+
     <section class="create-profile">
       <div class="head">
-        <h2 > Create Your Player Profile </h2>
+        <h2> Create Your Player Profile </h2>
       </div>
-  
-  
-        <form id="profileForm" onsubmit="return handleProfileCreation()">
-          <div class="form">
-            <div class="name-input">
-              <div class="name">
-                <label for="name">Name :</label>
-                <div class="input">
-                  <input type="text" id="name" name="name" placeholder="Enter Your Name" /> </div>
-                </div>
-            </div>
-            <div class="email-input">
-              <div class="email"> 
-                <label for="email">Email :</label> 
-                <div class="input"> <input type="email" id="email" name="email" placeholder="Enter Your Email" /> </div></div>
-            </div>
-         <div class="role-input">
-          <div class="role">
-  
-            <input type="hidden" id="role" name="role" value="">
-            <div class="password-input">
-              <div class="password">
-                <label for="password">Password :</label>
-                <div class="input">
-                  <input type="password" id="password" name="name" placeholder="Enter Your Password" /> </div>
-                </div>
-            </div>
 
-            <div class="sel">
-              <label for="roleSelection">Select Role :</label>
+
+      <form id="profileForm" onsubmit="return handleProfileCreation()">
+        <div class="form">
+          <div class="name-input">
+            <div class="name">
+              <label for="name">Name :</label>
+              <div class="input">
+                <input type="text" id="name" name="name" placeholder="Enter Your Name" />
+              </div>
             </div>
-        <div class="input">
-          <select id="roleSelection" onchange="setRole()">
-            <div class="option">
-              <option value="">Select Role</option>
-              <option value="batsman">Batsman</option>
-              <option value="bowler">Bowler</option>
-              <option value="wicketkeeper">Wicket Keeper</option>
-              <option value="allrounder">All Rounder</option>
+          </div>
+          <div class="email-input">
+            <div class="email">
+              <label for="email">Email :</label>
+              <div class="input"> <input type="email" id="email" name="email" placeholder="Enter Your Email" /> </div>
             </div>
-           
-          </select>
-        </div>
-        
           </div>
-          <div id="battingStats" style="display:none;">
-            <label for="battingStats">Batting Stats</label>
-            <textarea id="battingStatsInput" name="battingStats" rows="5"></textarea>
-          </div>
-          <div id="bowlingStats" style="display:none;">
-            <label for="bowlingStats">Bowling Stats</label>
-            <textarea id="bowlingStatsInput" name="bowlingStats" rows="5"></textarea>
-          </div>
-          <div id="wicketKeepingStats" style="display:none;">
-            <label for="wicketKeepingStats">Wicket Keeping Stats</label>
-            <textarea id="wicketKeepingStatsInput" name="wicketKeepingStats" rows="5"></textarea>
-          </div>
-         </div>
-            
-            <div class="button">
-              <button type="submit" class="btn" style="background-color:var(--color); color: var(--sec-color);">
-                <a href="create-profile.html">Create Profile</a></button>
-    
-  
+          <div class="role-input">
+            <div class="role">
+
+              <input type="hidden" id="password" name="password" value="">
+              <div class="password-input">
+                <div class="password">
+                  <label for="password">Password :</label>
+                  <div class="input">
+                    <input type="password" id="password" name="name" placeholder="Enter Your Password" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="sel">
+                <label for="roleSelection">Select Role :</label>
+                <div class="input-sel">
+                  <select id="roleSelection" onchange="setRole()">
+                    <div class="option">
+                      <option value="">Select Role</option>
+                      <option value="batsman">Batsman</option>
+                      <option value="bowler">Bowler</option>
+                      <option value="wicketkeeper">Wicket Keeper</option>
+                      <option value="allrounder">All Rounder</option>
+                    </div>
+
+                  </select>
+                </div>
+              </div>
+
             </div>
-    
-            
-    
-          </form>
-        </div>
-  
-  
+            <div id="battingStats" style="display:none;">
+              <label for="battingStats">Batting Stats</label>
+              <textarea id="battingStatsInput" name="battingStats" rows="5"></textarea>
+            </div>
+            <div id="bowlingStats" style="display:none;">
+              <label for="bowlingStats">Bowling Stats</label>
+              <textarea id="bowlingStatsInput" name="bowlingStats" rows="5"></textarea>
+            </div>
+            <div id="wicketKeepingStats" style="display:none;">
+              <label for="wicketKeepingStats">Wicket Keeping Stats</label>
+              <textarea id="wicketKeepingStatsInput" name="wicketKeepingStats" rows="5"></textarea>
+            </div>
           </div>
-  
-      
-          
-    </section>
+
+          <div class="button">
+            <button type="submit" style="background-color:gray; color: var(--sec-color);">
+              <a href="create-profile.html">Create Profile</a></button>
+
+
+          </div>
+
+
+
+      </form>
+  </div>
+
+
+  </div>
+
+
+
+  <!-- </section>
     <div class="foot">
       <footer>
           <p>&copy; 2025 Cricket Talent Hub. All rights reserved.</p>
@@ -269,7 +311,8 @@
     </div>
   
    
-    </div>
-    
+    </div> -->
+
 </body>
+
 </html>
