@@ -7,15 +7,24 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f2f2f2;
-    }
+      background-image: url("profile.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+     }
     .form-container {
+      /* position: absolute; */
       max-width: 600px;
-      background: #fff;
+      background: transparent;
       padding: 25px;
+      border: 5px solid black;
       border-radius: 10px;
       margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color:rgba(0 0 0 0.2);
+      border-radius: 20px;
+      box-shadow: 0 50px 50px 10px;
+  
     }
     h2 {
       text-align: center;
@@ -36,22 +45,22 @@
       cursor: pointer;
     }
     input[type="submit"]:hover {
-      background-color: #218838;
+      background-color: #55f578;
     }
     label {
       font-weight: bold;
     }
-    .img{
-      background-image:url("create-profile.jpg") ;
-      height: 100vh;
-      width: 100vw;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: absolute;
-      top:0px;
-      left:0px;
-      background-color: black;
-      opacity: 0.5;
+    h2{
+      position: relative;
+      top:-20px;
+      font-weight: bolder;
+      color: white;
+    }
+    select{
+      width: 625px;
+    }
+    .in input{
+      border: 2px solid white;
     }
   </style>
 </head>
@@ -86,8 +95,8 @@
 
       <label for="location">City/Location:</label>
       <input type="text" id="location" name="location" required>
-
-      <label for="batting_video">Batting Video:</label>
+<div class="in">
+  <label for="batting_video">Batting Video:</label>
       <input type="file" id="batting_video" name="batting_video" accept="video/*">
 
       <label for="bowling_video">Bowling Video:</label>
@@ -95,6 +104,8 @@
 
       <label for="fielding_video">Fielding Video:</label>
       <input type="file" id="fielding_video" name="fielding_video" accept="video/*">
+</div>
+    
 
       <label for="notes">Additional Notes (optional):</label>
       <textarea id="notes" name="notes" rows="4" placeholder="Write anything you’d like to share..."></textarea>
