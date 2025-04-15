@@ -78,7 +78,7 @@
 
     }
     .button  button{
-      color:black;
+      color: white;
       display: inline-block;
       border: 2px solid white;
       font-weight: bold;
@@ -157,31 +157,32 @@
 
   <section class="login">
     <div class="box">
-      <form action="login.html">
+      <form action="login.php" method="POST">
         <div class="head"><h1>LOGIN</h1></div>
+      
         <div class="email-in">
           <label for="email">Email:</label>
-        <div class="email">
-          <input type="text" id="email" placeholder="Email">
+          <div class="email">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
         </div>
-        </div>
+      
         <div class="pass-in">
           <label for="password">Password:</label>
-        <div class="password">
-          <input type="password" id="password" placeholder="Password">
+          <div class="password">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+          </div>
         </div>
-
-        </div>
+      
         <div class="button">
-          <button type="submit"><a href="home.html">Login</a></button>
+          <button type="submit">Login</button>
         </div>
+      
         <div class="p">
           <p>Don't have an account? <a href="create-profile.html">SignUp</a></p>
         </div>
-        
-
-
       </form>
+      
 
     </div>
   

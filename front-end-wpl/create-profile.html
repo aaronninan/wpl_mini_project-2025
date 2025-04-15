@@ -1,318 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Create Your Player Profile | Cricket Talent Hub</title>
-
-  <!-- <link rel="stylesheet" href="style.css" /> -->
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Talent Registration - Cricket Talent Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-  </style>
-
-  <style>
-    :root {
-      --color: black;
-      --sec-color: white;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Rubik", sans-serif;
-    }
-
     body {
-      background-color: var(--color);
-      color: var(--sec-color);
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
     }
-
-    .list {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-      padding: 10px;
-      margin: 10px;
-      position: absolute;
-      top: 0px;
-    }
-
-    .list li a {
-      text-decoration: none;
-      color: var(--sec-color);
-    }
-
-    .img img {
-      opacity: 0.25;
-      background-size: auto;
-      width: 100vw;
-      height: 100vh;
-      position: absolute;
-    }
-
-
-    .head {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 25px;
-      position: absolute;
-      top: 50px;
-      left: 575px;
-    }
-
-    .form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 500px;
-      margin: 0px auto;
-      margin-top: 40px;
-      background-color: rgba(255, 255, 255, 0.134);
-      padding: 40px;
-      border-radius: 20px;
-      position: absolute;
-      top: 100px;
-      left: 600px;
-      height: 550px;
-      gap: 25px;
-      border: 5px solid black;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 20px;
-    }
-
-    .email {
-      margin-top: -20px;
-      position: relative;
-      top: -30px;
-    }
-
-    .name-input {
+    .form-container {
+      max-width: 600px;
+      background: #fff;
       padding: 25px;
-      position: relative;
-      top: -30px;
+      border-radius: 10px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    .password-input {
-      position: relative;
-      top:-30px;
-      left:56px;
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
     }
-
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
     label {
-      margin-bottom: 8px;
       font-weight: bold;
     }
-
-    input,
-    textarea {
-      padding: 12px 16px;
-      border: 2px solid var(--sec-color);
-      border-radius: 50px;
-      background-color: transparent;
-      color: var(--sec-color);
-      font-size: 16px;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    .button {
-      text-align: center;
-      position: relative;
-      top: 30px;
-      left:-10px;
-    }
-
-    button a {
-      padding: 12px 30px;
-      font-size: 16px;
-      background-color: var(--color);
-      color: var(--sec-color);
-      border: 3px solid var(--sec-color);
-      border-radius: 30px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    a:hover {
-      background-color: gray;
-    }
-
-
-    .foot {
-      text-align: center;
-      padding: 20px 0;
-      background-color: var(--color);
-      color: var(--sec-color);
-      margin-top: 60px;
-      font-size: 20px;
-      background-color: var(--sec-color);
-      color: black;
-
-    }
-
-    .role {
-      margin-top: 10px;
-      margin-right: 50px;
-
-    }
-
-    .option {
-      color: black;
-    }
-
-    select {
-      padding: 10px 50px;
-      border: 2px solid var(--sec-color);
-      border-radius: 80px;
-      background-color: transparent;
-      color: var(--sec-color);
-      font-size: 16px;
-      margin-left: 35px;
-    }
-
-    .sel {
-      margin-left: 40px;
-      position: relative;
-      top: -5px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    }
-
-    .input {
-      margin-top: 10px;
-    }
-    .input-sel{
-      position: relative;
-      right: 20px;
+    .img{
+      background-image:url("create-profile.jpg") ;
+      height: 100vh;
+      width: 100vw;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top:0px;
+      left:0px;
+      background-color: black;
+      opacity: 0.5;
     }
   </style>
-
 </head>
-
 <body>
 
-  <header>
-    <div class="container">
+  <div class="form-container">
+    <h2>Talent Registration</h2>
+    <form action="profile.php" method="POST" enctype="multipart/form-data">
+      
+      <!-- Email and Password Fields -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-    </div>
-  </header>
-  <div class="all">
-    <div class="img">
-      <img src="create-profile.jpg" alt="error">
-    </div>
-    <nav>
-      <ul>
-        <div class="list">
-          <li><a href="home.html">Home</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="profile.html">Profile</a></li>
-        </div>
-      </ul>
-    </nav>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
 
-    <section class="create-profile">
-      <div class="head">
-        <h2> Create Your Player Profile </h2>
-      </div>
+      <!-- Other Fields -->
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
 
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
 
-      <form id="profileForm" onsubmit="return handleProfileCreation()">
-        <div class="form">
-          <div class="name-input">
-            <div class="name">
-              <label for="name">Name :</label>
-              <div class="input">
-                <input type="text" id="name" name="name" placeholder="Enter Your Name" />
-              </div>
-            </div>
-          </div>
-          <div class="email-input">
-            <div class="email">
-              <label for="email">Email :</label>
-              <div class="input"> <input type="email" id="email" name="email" placeholder="Enter Your Email" /> </div>
-            </div>
-          </div>
-          <div class="role-input">
-            <div class="role">
+      <label for="role">Playing Role:</label>
+      <select id="role" name="role" required>
+        <option value="">Select</option>
+        <option value="Batsman">Batsman</option>
+        <option value="Bowler">Bowler</option>
+        <option value="All-rounder">All-rounder</option>
+        <option value="Wicket-keeper">Wicket-keeper</option>
+      </select>
 
-              <input type="hidden" id="password" name="password" value="">
-              <div class="password-input">
-                <div class="password">
-                  <label for="password">Password :</label>
-                  <div class="input">
-                    <input type="password" id="password" name="name" placeholder="Enter Your Password" />
-                  </div>
-                </div>
-              </div>
+      <label for="location">City/Location:</label>
+      <input type="text" id="location" name="location" required>
 
-              <div class="sel">
-                <label for="roleSelection">Select Role :</label>
-                <div class="input-sel">
-                  <select id="roleSelection" onchange="setRole()">
-                    <div class="option">
-                      <option value="">Select Role</option>
-                      <option value="batsman">Batsman</option>
-                      <option value="bowler">Bowler</option>
-                      <option value="wicketkeeper">Wicket Keeper</option>
-                      <option value="allrounder">All Rounder</option>
-                    </div>
+      <label for="batting_video">Batting Video:</label>
+      <input type="file" id="batting_video" name="batting_video" accept="video/*">
 
-                  </select>
-                </div>
-              </div>
+      <label for="bowling_video">Bowling Video:</label>
+      <input type="file" id="bowling_video" name="bowling_video" accept="video/*">
 
-            </div>
-            <div id="battingStats" style="display:none;">
-              <label for="battingStats">Batting Stats</label>
-              <textarea id="battingStatsInput" name="battingStats" rows="5"></textarea>
-            </div>
-            <div id="bowlingStats" style="display:none;">
-              <label for="bowlingStats">Bowling Stats</label>
-              <textarea id="bowlingStatsInput" name="bowlingStats" rows="5"></textarea>
-            </div>
-            <div id="wicketKeepingStats" style="display:none;">
-              <label for="wicketKeepingStats">Wicket Keeping Stats</label>
-              <textarea id="wicketKeepingStatsInput" name="wicketKeepingStats" rows="5"></textarea>
-            </div>
-          </div>
+      <label for="fielding_video">Fielding Video:</label>
+      <input type="file" id="fielding_video" name="fielding_video" accept="video/*">
 
-          <div class="button">
-            <button type="submit" style="background-color:gray; color: var(--sec-color);">
-              <a href="create-profile.html">Create Profile</a></button>
+      <label for="notes">Additional Notes (optional):</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Write anything you’d like to share..."></textarea>
 
-
-          </div>
-
-
-
-      </form>
+      <input type="submit" value="Register Talent">
+    </form>
   </div>
-
-
-  </div>
-
-
-
-  <!-- </section>
-    <div class="foot">
-      <footer>
-          <p>&copy; 2025 Cricket Talent Hub. All rights reserved.</p>
-      </footer>
-    </div>
-  
-   
-    </div> -->
-
 </body>
-
 </html>
+
