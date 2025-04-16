@@ -64,7 +64,6 @@
     .email-in{
       position: relative;
       top:-210px;
-      left:25px;
       bottom: 100px;
     }
     .password{
@@ -73,7 +72,6 @@
     }
     .pass-in{
       position: relative;
-      left:25px;
       bottom: 175px;
 
     }
@@ -92,7 +90,7 @@
       margin-left: 48px;
       position: relative;
       top:-130px;
-      left:25px;
+      left:-25px;
     }
     button{
       border: 2px solid black;
@@ -138,6 +136,19 @@
       font-weight: bold;
 
     }
+    select{
+      color: white;
+      border: 2px solid white;
+      border-radius: 50px;
+      padding: 10px 40px;
+      background-color: black;
+      font-weight: bold;
+      font-size:large;
+    }
+    select option{
+      color:white;
+
+}
   </style>
   <script src="script.js" defer></script>
 </head>
@@ -178,8 +189,13 @@
           <button type="submit">Login</button>
         </div>
       
-        <div class="p">
-          <p>Don't have an account? <a href="create-profile.html">SignUp</a></p>
+        <div class="p">        
+   <select id="login-as" name="login-as" required>
+    <p>Don't have an account?</p>
+            <option value="">SignUp</option>
+            <option value="player"><a href="create-profile.html">As Player</a></option>
+            <option value="scout"><a href="create-profile.html">As Scout</a></option>
+          </select>
         </div>
       </form>
       
