@@ -31,9 +31,9 @@
       font-family: "Bungee", sans-serif;
       font-weight: 400;
       font-style: normal;
-      font-size: 30px;
+      font-size: 35px;
       position: relative;
-      top:-180px;
+      top:-170px;
       left: 0px;
       display: inline-block;
       color: white;
@@ -175,15 +175,21 @@
 .signup h3 a {
   position: relative;
   display: inline-block;
-  top:30px;
+  top:20px;
   background-color: black;
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 60px;
   padding: 5px 10px;
+  gap:10px;
 }
 .signup h3 a:hover {
-  background-color: rgb(252, 10, 10);
+  background-color: gray;
  
+}
+.signup h3 p {
+  position: relative;
+  color: white;
+  font-size: larger;
 }
 .box2{
   border:2px solid black;
@@ -240,6 +246,11 @@
   position: relative;
   top:20px;
 }
+.link{
+  display: flex;
+  justify-content: center;
+  gap:20px;
+}
   </style>
 </head>
 
@@ -277,7 +288,11 @@
           
             <div class="signup">
               <h3>
-                <a href="create-profile.html">Sign Up</a>
+                  <p>Sign Up Now !</p> <br>
+                  <div class="link">
+                    <a href="create-profile.html">As Player</a>
+                    <a href="sign_up_scout.html">As Scout</a>
+                  </div>
                </h3>
             </div>
             

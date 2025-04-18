@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scout Registration - Cricket Talent Hub</title>
   <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: Arial, sans-serif;
       background-image: url("profile.jpg");
@@ -12,9 +16,12 @@
       background-position: center;
       background-repeat: no-repeat;
       color: white;
+      height: 90vh;
     }
     .form-container {
       /* position: absolute; */
+      position: relative;
+      top:100px;
       max-width: 600px;
       background: transparent;
       padding: 25px;
@@ -23,7 +30,7 @@
       margin: auto;
       background-color: rgba(0 0 0 0.2);
       border-radius: 20px;
-      box-shadow: 0 50px 50px 10px;
+      box-shadow: 0 25px 25px 10px;
     }
     h2 {
       position: relative;
@@ -40,21 +47,65 @@
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-    input[type="submit"] {
+    button[type="submit"] {
       background-color: #28a745;
       color: white;
       border: none;
       cursor: pointer;
+      width: 600px;
+      font-size: larger;
     }
-    input[type="submit"]:hover {
+    button[type="submit"]:hover {
       background-color: #55f578;
     }
-    label {
-      font-weight: bold;
+    input{
+      opacity: 0.8;
+      border: 2px solid black;
     }
+    label {
+      font-weight: bolder;
+    }
+    .nav ul {
+      display: flex;
+      list-style: none;
+      gap:10px;
+     }
+    .nav li{
+  color: white;
+  font-weight: 400;
+  border: 2px solid white;
+  border-radius: 40px;
+  padding: 10px 20px;
+  background-color: black;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+.nav li:hover{
+  background-color: gray;
+ 
+}
+a{
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
   </style>
 </head>
 <body>
+  <div class="nav">
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+
+        <li><a href="login.html">Login</a></li>
+
+        <li><a href="profile.html">Profile</a></li>
+
+        <li><a href="About.html">About Us</a></li>
+
+      </ul>
+    </nav>
+  </div>
   <div class="form-container">
     <h2>Scout Registration</h2>
     <form action="sign_up_scoutpage.php" method="POST">
@@ -67,7 +118,7 @@
       <label for="confirm_password">Confirm Password:</label>
       <input type="password" id="confirm_password" name="confirm_password" required />
 
-      <input type="submit" value="Register Scout" />
+    <button type="submit">Register Scout</button>
     </form>
   </div>
 </body>
