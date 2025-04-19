@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wicketkeeper Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-image:url("batsman.jpg") ;
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      color: white;
+     }
+    .form-container {
+      max-width: 600px;
+      background: transparent;
+      padding: 25px;
+      border: 5px solid black;
+      border-radius: 10px;
+      margin: auto;
+      background-color:rgba(0 0 0 0.2);
+      border-radius: 20px;
+      box-shadow: 0px  10px 50px 10px;
+      position: relative;
+      bottom: 5px;
+      left:50px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    label {
+      font-weight: bold;
+    }
+    h2{
+      position: relative;
+      top:-20px;
+      font-weight: bolder;
+      color: white;
+    }
+    select{
+      width: 625px;
+    }
+    .in input{
+      border: 2px solid white;
+    }
+    .nav ul {
+      display: flex;
+      list-style: none;
+      gap:10px;
+     }
+    .nav li{
+      color: white;
+      font-weight: 400;
+      border: 2px solid white;
+      border-radius: 40px;
+      padding: 10px 20px;
+      background-color: black;
+      margin-top: 20px;
+      margin-left: 10px;
+      z-index: 1;
+    }
+    .nav li:hover{
+      background-color: gray;
+    }
+    a{
+      list-style: none;
+      text-decoration: none;
+      color: white;
+    }
+    .click button{
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 15px;
+      border-radius: 5px;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+    }
+    button{
+      cursor: pointer;
+      border: none;
+    }
+    .click button:hover{
+      background-color: #78bd88;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="About.html">About Us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="form-container">
+    <h2> Wicketkeeper Profile</h2>
+
+    <form action="wicketkeeper.php" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="profile_id" value="1">
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+      
+      <label for="location">City / Location:</label>
+      <input type="text" id="location" name="location" required>
+
+      <label for="club_name">Club Name:</label>
+      <input type="text" id="club_name" name="club_name" required>
+
+      <label for="role">Playing Role:</label>
+      <select id="role" name="role" required>
+        <option value="Wicketkeeper" selected>Wicketkeeper</option>
+      </select>
+
+      <label for="style">Batting Style:</label>
+      <select id="style" name="style" required>
+        <option value="">Select</option>
+        <option value="Right Handed">Right Handed</option>
+        <option value="Left Handed">Left Handed</option>
+        <option value="Both">Both</option>
+      </select>
+
+      <label for="matches">Number Of Matches Played:</label>
+      <input type="number" id="matches" name="matches" required>
+
+      <label for="runs">Runs Scored:</label>
+      <input type="number" id="runs" name="runs" required>
+
+      <label for="wickets_behind_stumps">Total Dismissals (Catches, Stumpings, etc.):</label>
+      <input type="number" id="wickets_behind_stumps" name="wickets_behind_stumps" required>
+
+      <label for="average">Batting Average (Eg: 45.67):</label>
+      <input type="number" id="average" name="average" step="0.01" required>
+
+      <label for="strike_rate">Batting Strike Rate (Eg: 145.79):</label>
+      <input type="number" id="strike_rate" name="strike_rate" step="0.01" required>
+
+      <label for="image_link">Upload Your Image:</label>
+      <input type="file" name="image" accept="image/*" required>
+
+      <div class="click">
+        <button type="submit">Create Profile</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
