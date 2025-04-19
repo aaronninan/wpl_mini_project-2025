@@ -1,20 +1,13 @@
 <?php
 session_start();
-// Get and clear the error message at the beginning
-
-if (isset($_SESSION['error'])) {
-    $error = $_SESSION['error'];
-} else {
-    $error = "";
-}
-
-unset($_SESSION['error']);  // This must come right after getting it
+$error = $_SESSION['error'] ?? "";
+unset($_SESSION['error']);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
+    $enteredRole = strtolower(trim($_POST['role'] ?? ''));
 
-    // Database connectionS
     $host = "localhost";
     $port = "5432";
     $dbname = "cricket_hub";
@@ -29,26 +22,56 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
         if ($user && password_verify($password, $user['password'])) {
-            $_SESSION['email'] = $user['email'];
-            header("Location: home.html");
-            exit();
+            $storedRole = strtolower(trim($user['role']));
+
+            if ($enteredRole === $storedRole) {
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['role'] = $storedRole;
+
+                // Redirect based on correct role
+                switch ($storedRole) {
+                    case 'batsman':
+                        header("Location: batsman-profile.html");
+                        break;
+                    case 'bowler':
+                        header("Location: bowler-profile.html");
+                        break;
+                    case 'all-rounder':
+                        header("Location: allrounder-profile.html");
+                        break;
+                    case 'wicket-keeper':
+                        header("Location: wicket-keeper-profile.html");
+                        break;
+                        case 'scout':
+                          header("Location: profile.html");
+                          break;
+                    default:
+                        header("Location: generic-profile.html");
+                        break;
+                }
+                exit();
+            } else {
+                $_SESSION['error'] = "Role mismatch! Please select your correct role.";
+                header("Location: login.php");
+                exit();
+            }
         } else {
-            $_SESSION['error'] = "Invalid username or password!";
-            $_SESSION['old_email'] = $email;
+            $_SESSION['error'] = "Invalid email or password!";
             header("Location: login.php");
             exit();
         }
 
-    }
-    catch (PDOException $e) {
+    } catch (PDOException $e) {
         $_SESSION['error'] = "Database error!";
         header("Location: login.php");
         exit();
     }
 }
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height:90vh;
+      height:110vh;
     }
     .nav ul {
       display: flex;
@@ -89,11 +112,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       font-size: 30px;
       margin-bottom: 275px;
       position: relative;
-      top:65px;
+      top:75px;
     }
     .box{
       border: 2px solid black;
-     height:550px;
+     height:620px;
      width:500px;
      margin-left: 500px;
      margin-top:10px ;
@@ -141,7 +164,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     .button{
       margin-left: 48px;
       position: relative;
-      top:-130px;
+      top:-120px;
       left:25px;
     }
     button{
@@ -194,15 +217,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     select{
       color: white;
+      width: 80%;
       border: 2px solid white;
       border-radius: 50px;
       padding: 10px 40px;
       background-color: black;
       font-weight: bold;
       font-size:large;
+      position: relative;
+      right:20px;
     }
     select option{
-      color:white;
+      color: white;
 
 }
 .link{
@@ -230,6 +256,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             align-items:center;
             left:20px;
         }
+      .role{
+        display:flex;
+        flex-direction:column;
+        position:relative;
+        top:25px;
+        gap:10px;
+      }
   </style>
   <script src="script.js" defer></script>
 </head>
@@ -240,7 +273,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <nav>
           <ul>
           <li><a href="home.html">Home</a></li>
-          <li><a href="profile.html"> Profiles</a></li>
+          <li><a href="profile.php"> Profiles</a></li>
           <li><a href="About.html"> About Us</a></li>
         </ul>
       </nav>
@@ -248,7 +281,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   </header>
   <section class="login">
     <div class="box">
-      <form  method="POST">
+      <form  action="login.php" method="POST">
 
         <div class="head"><h1>LOGIN</h1></div>
         <div class="php">
@@ -270,10 +303,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <div class="password">
             <input type="password" id="password" name="password" placeholder="Password" required>
           </div>
+          <div class="role">
+          <label for="role">Playing Role:</label>
+      <select id="role" name="role" required>
+        <option value="">Select</option>
+        <option value="Batsman">Batsman</option>
+        <option value="Bowler">Bowler</option>
+        <option value="All-rounder">All-rounder</option>
+        <option value="Wicket-keeper">Wicket-keeper</option>
+        <option value="Scout">Scout</option>
+      </select>
+          </div>
+        
+
         </div>
+       
+
       
         <div class="button">
-          <button type="submit">Login</button>
+
+        <script>
+   function validateForm(event) {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (email === "" || password === "") {
+      alert("Please enter both email and password.");
+      event.preventDefault(); // Stop the form from submitting
+    }
+  }
+</script>
+        
+          <button type="submit">Login</button> 
         </div>
       
         <div class="p">       

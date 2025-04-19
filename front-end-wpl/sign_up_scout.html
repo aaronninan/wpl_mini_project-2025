@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scout Registration - Cricket Talent Hub</title>
+  <meta charset="UTF-8">
+  <title>Talent Registration - Cricket Talent Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     *{
       margin: 0;
@@ -16,54 +16,50 @@
       background-position: center;
       background-repeat: no-repeat;
       color: white;
-      height: 90vh;
-    }
+      height: 155vh;
+     }
     .form-container {
       /* position: absolute; */
-      position: relative;
-      top:100px;
       max-width: 600px;
       background: transparent;
       padding: 25px;
       border: 5px solid black;
       border-radius: 10px;
       margin: auto;
-      background-color: rgba(0 0 0 0.2);
+      background-color:rgba(0 0 0 0.2);
       border-radius: 20px;
-      box-shadow: 0 25px 25px 10px;
+      box-shadow: 0 50px 50px 10px;
+      position: relative;
+      bottom: 5px;
+      left:50px;
+  
     }
     h2 {
-      position: relative;
-      top: -20px;
-      font-weight: bolder;
-      color: white;
       text-align: center;
       margin-bottom: 20px;
+      color: #333;
     }
-    input {
+    input, select, textarea {
       width: 100%;
       padding: 10px;
       margin: 10px 0 15px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-    button[type="submit"] {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      cursor: pointer;
-      width: 600px;
-      font-size: larger;
-    }
-    button[type="submit"]:hover {
-      background-color: #55f578;
-    }
-    input{
-      opacity: 0.8;
-      border: 2px solid black;
-    }
     label {
+      font-weight: bold;
+    }
+    h2{
+      position: relative;
+      top:-20px;
       font-weight: bolder;
+      color: white;
+    }
+    select{
+      width: 625px;
+    }
+    .in input{
+      border: 2px solid white;
     }
     .nav ul {
       display: flex;
@@ -77,7 +73,7 @@
   border-radius: 40px;
   padding: 10px 20px;
   background-color: black;
-  margin-top: 25px;
+  margin-top: 20px;
   margin-left: 10px;
 }
 .nav li:hover{
@@ -88,6 +84,27 @@ a{
   list-style: none;
   text-decoration: none;
   color: white;
+}
+.click button{
+  background-color: #28a745;
+      color: white;
+      cursor: pointer;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 15px;
+      border-radius: 5px;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+}
+button{
+  cursor: pointer;
+  border: none;
+}
+.click button:hover{
+  background-color: #78bd88;
+
+
 }
   </style>
 </head>
@@ -106,20 +123,43 @@ a{
       </ul>
     </nav>
   </div>
+
   <div class="form-container">
     <h2>Scout Registration</h2>
-    <form action="sign_up_scoutpage.php" method="POST">
+
+
+
+    <form action="profile.php" method="POST" enctype="multipart/form-data">
+      
+      <!-- Email and Password Fields -->
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+      <input type="email" id="email" name="email" required>
 
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required />
+      <input type="password" id="password" name="password" required>
 
-      <label for="confirm_password">Confirm Password:</label>
-      <input type="password" id="confirm_password" name="confirm_password" required />
+      <!-- Other Fields -->
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
 
-    <button type="submit">Register Scout</button>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="role">Role:</label>
+      <select id="role" name="role" required>
+        <option value="scout">Scout</option>
+      </select>
+
+      <label for="location">City/Location:</label>
+      <input type="text" id="location" name="location" required>
+      <label for="notes">Additional Notes (optional):</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Write anything you’d like to share..."></textarea>
+<div class="click">
+    <button type="submit">Register Talent</button>
+  </div>
+     
     </form>
   </div>
 </body>
 </html>
+

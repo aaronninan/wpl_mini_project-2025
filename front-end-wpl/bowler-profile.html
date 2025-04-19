@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Talent Registration - Cricket Talent Hub</title>
+  <title>Batsman-Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     *{
@@ -12,12 +11,12 @@
     }
     body {
       font-family: Arial, sans-serif;
-      background-image: url("profile.jpg");
+      background-image:url("batsman.jpg") ;
       background-size: cover;
-      background-position: center;
+      background-position: top;
       background-repeat: no-repeat;
       color: white;
-      height: 155vh;
+      /* background-color: black; */
      }
     .form-container {
       /* position: absolute; */
@@ -29,7 +28,7 @@
       margin: auto;
       background-color:rgba(0 0 0 0.2);
       border-radius: 20px;
-      box-shadow: 0 50px 50px 10px;
+      box-shadow: 0px  10px 50px 10px;
       position: relative;
       bottom: 5px;
       left:50px;
@@ -76,6 +75,8 @@
   background-color: black;
   margin-top: 20px;
   margin-left: 10px;
+  z-index: 1;
+
 }
 .nav li:hover{
   background-color: gray;
@@ -107,6 +108,7 @@ button{
 
 
 }
+
   </style>
 </head>
 <body>
@@ -117,7 +119,7 @@ button{
 
         <li><a href="login.php">Login</a></li>
 
-        <li><a href="profile.php">Profile</a></li>
+        <li><a href="profile.html">Profile</a></li>
 
         <li><a href="About.html">About Us</a></li>
 
@@ -126,41 +128,62 @@ button{
   </div>
 
   <div class="form-container">
-    <h2>Talent Registration</h2>
+    <h2> Bowler Profile</h2>
 
 
 
-    <form action="create-profile.php" method="POST" enctype="multipart/form-data">
+    <form action="batsman.php" method="POST" enctype="multipart/form-data">
       
-      <!-- Email and Password Fields -->
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-
-      <!-- Other Fields -->
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" required>
 
       <label for="age">Age:</label>
       <input type="number" id="age" name="age" required>
+      
+      <label for="location">City / Location:</label>
+      <input type="text" id="location" name="location" required>
+
+      <label for="club_name">Club Name:</label>
+      <input type="text" id="club_name" name="club_name" required>
 
       <label for="role">Playing Role:</label>
       <select id="role" name="role" required>
-        <option value="">Select</option>
         <option value="Batsman">Batsman</option>
-        <option value="Bowler">Bowler</option>
-        <option value="All-rounder">All-rounder</option>
-        <option value="Wicket-keeper">Wicket-keeper</option>
       </select>
 
-      <label for="location">City/Location:</label>
-      <input type="text" id="location" name="location" required>
-      <label for="notes">Additional Notes (optional):</label>
-      <textarea id="notes" name="notes" rows="4" placeholder="Write anything you’d like to share..."></textarea>
+      <label for="style">Batting Style:</label>
+      <select id="style" name="style" required>
+        <option value="">Select</option>
+        <option value="Batsman">Right Handed</option>
+        <option value="Bowler">Left Handed</option>
+        <option value="All-rounder">Both</option>
+      </select>
+
+
+
+      <label for="matches">Number Of Matches Played:</label>
+      <input type="number" id="matches" name="matches" required>
+
+      <label for="runs">Runs Scored:</label>
+      <input type="number" id="runs" name="runs" required>
+
+      <label for="average"> Batting Average ( Eg :- 45.67 ):</label>
+      <input type="number" id="average" name="average" step="0.01">
+
+      <label for="centuries">Number Of Centuries:</label>
+      <input type="number" id="centuries" name="centuries" required>
+
+      <label for="half_centuries">Number Of Half Centuries:</label>
+      <input type="number" id="half_centuries" name="half_centuries" required>
+
+      <label for="strike_rate"> Strike Rate ( Eg :- 145.79 ):</label>
+      <input type="number" id="strike_rate" name="strike_rate" step="0.01">
+
+      <label for="heighest_score">Highest Score:</label>
+      <input type="number" id="heighest_score" name="heighest_score" required>
+
 <div class="click">
-    <button type="submit">Register Talent</button>
+    <button type="submit">Create Profile</button>
   </div>
      
     </form>
