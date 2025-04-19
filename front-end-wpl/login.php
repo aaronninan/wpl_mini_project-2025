@@ -304,7 +304,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input type="password" id="password" name="password" placeholder="Password" required>
           </div>
           <div class="role">
-          <label for="role">Playing Role:</label>
+          <label for="role">Role:</label>
       <select id="role" name="role" required>
         <option value="">Select</option>
         <option value="Batsman">Batsman</option>

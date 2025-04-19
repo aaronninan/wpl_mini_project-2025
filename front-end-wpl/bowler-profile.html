@@ -138,7 +138,7 @@ button{
       <input type="text" id="name" name="name" required>
 
       <label for="age">Age:</label>
-      <input type="number" id="age" name="age" required>
+      <input type="number" id="age" min="0" name="age" required>
       
       <label for="location">City / Location:</label>
       <input type="text" id="location" name="location" required>
@@ -148,39 +148,46 @@ button{
 
       <label for="role">Playing Role:</label>
       <select id="role" name="role" required>
-        <option value="Batsman">Batsman</option>
+        <option value="Bowler">Bowler</option>
       </select>
 
-      <label for="style">Batting Style:</label>
+      <label for="style">Bowling Style:</label>
       <select id="style" name="style" required>
         <option value="">Select</option>
-        <option value="Batsman">Right Handed</option>
-        <option value="Bowler">Left Handed</option>
-        <option value="All-rounder">Both</option>
+        <option value="Right Handed">Right Handed</option>
+        <option value="Left Handed">Left Handed</option>
+        <option value="Both">Both</option>
       </select>
 
+      <label for="type">Bowling Type:</label>
+      <select id="type" name="type" required>
+        <option value="">Select</option>
+        <option value="fast_bowler">Fast Bowler</option>
+        <option value="Medium_pacer">Medium Pacer</option>
+        <option value="Off_spinner">Off Spinner</option>
+        <option value="leg_spinner">leg Spinner</option>
+      </select>
 
 
       <label for="matches">Number Of Matches Played:</label>
-      <input type="number" id="matches" name="matches" required>
+      <input type="number" id="matches" min="0" name="matches" required>
 
-      <label for="runs">Runs Scored:</label>
-      <input type="number" id="runs" name="runs" required>
+      <label for="wickets">Wickets Taken:</label>
+      <input type="number" id="wickets" min="0"  name="wickets" required>
 
-      <label for="average"> Batting Average ( Eg :- 45.67 ):</label>
-      <input type="number" id="average" name="average" step="0.01">
+      <label for="average"> Economy Rate( Eg :-5.67 ):</label>
+      <input type="number" id="average" min="0" name="average" step="0.01">
 
-      <label for="centuries">Number Of Centuries:</label>
-      <input type="number" id="centuries" name="centuries" required>
+      <label for="Fifers">Number Of Fifers (5 wickets):</label>
+      <input type="number" id="Fifers" min="0" name="Fifers" required>
 
-      <label for="half_centuries">Number Of Half Centuries:</label>
-      <input type="number" id="half_centuries" name="half_centuries" required>
+      <label for="Best_Bowling_Figures">Best Bowling Figures( eg:- 5 / 20 ):</label>
+      <input type="text" id="Best_Bowling_Figures" min="0" name="Best_Bowling_Figures" required>
 
-      <label for="strike_rate"> Strike Rate ( Eg :- 145.79 ):</label>
-      <input type="number" id="strike_rate" name="strike_rate" step="0.01">
+      <label for="image_link">Upload Your Image:</label>
+        <input type="file" name="image" accept="image/*" required>
 
-      <label for="heighest_score">Highest Score:</label>
-      <input type="number" id="heighest_score" name="heighest_score" required>
+    
 
 <div class="click">
     <button type="submit">Create Profile</button>
