@@ -16,14 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $city = $_POST['location'];
         $club_name = $_POST['club_name'];
         $role = $_POST['role'];
-        $batting_style = $_POST['style'];
+        $bowling_style = $_POST['style'];
+        $bowling_type = $_POST['type'];
         $matches = $_POST['matches'];
-        $runs = $_POST['runs'];
-        $average = $_POST['average'];
-        $centuries = $_POST['centuries'];
-        $half_centuries = $_POST['half_centuries'];
-        $strike_rate = $_POST['strike_rate'];
-        $highest_score = $_POST['heighest_score'];
+        $wickets = $_POST['wickets'];
+        $economy_rate = $_POST['average'];
+        $fifers = $_POST['Fifers'];
+        $best_bowling_figures = $_POST['Best_Bowling_Figures'];
 
         // Handle image upload
         $image_link = '';
@@ -38,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         // Prepare SQL query
-        $sql = "INSERT INTO Batsman (name, age, city, club_name, role, batting_style, matches, runs, average, centuries, half_centuries, strike_rate, highest_score, image_link)
-                VALUES (:name, :age, :city, :club_name, :role, :batting_style, :matches, :runs, :average, :centuries, :half_centuries, :strike_rate, :highest_score, :image_link)";
+        $sql = "INSERT INTO Bowler (name, age, city, club_name, role, bowling_style, bowling_type, matches, wickets, economy_rate, fifers, best_bowling_figures, image_link)
+                VALUES (:name, :age, :city, :club_name, :role, :bowling_style, :bowling_type, :matches, :wickets, :economy_rate, :fifers, :best_bowling_figures, :image_link)";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute([
@@ -48,23 +47,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ':city' => $city,
             ':club_name' => $club_name,
             ':role' => $role,
-            ':batting_style' => $batting_style,
+            ':bowling_style' => $bowling_style,
+            ':bowling_type' => $bowling_type,
             ':matches' => $matches,
-            ':runs' => $runs,
-            ':average' => $average,
-            ':centuries' => $centuries,
-            ':half_centuries' => $half_centuries,
-            ':strike_rate' => $strike_rate,
-            ':highest_score' => $highest_score,
+            ':wickets' => $wickets,
+            ':economy_rate' => $economy_rate,
+            ':fifers' => $fifers,
+            ':best_bowling_figures' => $best_bowling_figures,
             ':image_link' => $image_link
         ]);
 
-        // Get the last inserted ID (optional)
-        $last_id = $conn->lastInsertId("batsman_id_seq");
+        // Get the last inserted ID
+        $last_id = $conn->lastInsertId("bowler_id_seq");  // Use your actual sequence name
 
         // Redirect to profile page
         header("Location: profile.html?id=" . $last_id);
         exit;
+
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }

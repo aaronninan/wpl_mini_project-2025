@@ -117,8 +117,6 @@ button{
       <ul>
         <li><a href="home.html">Home</a></li>
 
-        <li><a href="login.php">Login</a></li>
-
         <li><a href="profile.html">Profile</a></li>
 
         <li><a href="About.html">About Us</a></li>
@@ -132,13 +130,13 @@ button{
 
 
 
-    <form action="batsman.php" method="POST" enctype="multipart/form-data">
+    <form action="bowler.php" method="POST" enctype="multipart/form-data">
       
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" required>
 
       <label for="age">Age:</label>
-      <input type="number" id="age" min="0" name="age" required>
+      <input type="number" id="age" min="0" max="100"name="age" required>
       
       <label for="location">City / Location:</label>
       <input type="text" id="location" name="location" required>
@@ -170,16 +168,16 @@ button{
 
 
       <label for="matches">Number Of Matches Played:</label>
-      <input type="number" id="matches" min="0" name="matches" required>
+      <input type="number" id="matches" min="0" max="1000"name="matches" required>
 
       <label for="wickets">Wickets Taken:</label>
-      <input type="number" id="wickets" min="0"  name="wickets" required>
+      <input type="number" id="wickets" min="0"  max="1000"name="wickets" required>
 
       <label for="average"> Economy Rate( Eg :-5.67 ):</label>
-      <input type="number" id="average" min="0" name="average" step="0.01">
+      <input type="number" id="average" min="0" max="50" name="average" step="0.01">
 
       <label for="Fifers">Number Of Fifers (5 wickets):</label>
-      <input type="number" id="Fifers" min="0" name="Fifers" required>
+      <input type="number" id="Fifers" min="0" max="100" name="Fifers" required>
 
       <label for="Best_Bowling_Figures">Best Bowling Figures( eg:- 5 / 20 ):</label>
       <input type="text" id="Best_Bowling_Figures" min="0" name="Best_Bowling_Figures" required>

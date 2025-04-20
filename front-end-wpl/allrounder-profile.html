@@ -125,7 +125,7 @@
       <input type="text" id="name" name="name" required>
 
       <label for="age">Age:</label>
-      <input type="number" id="age" name="age" required>
+      <input type="number" id="age" name="age" min="0" max="100" required>
       
       <label for="location">City / Location:</label>
       <input type="text" id="location" name="location" required>
@@ -161,26 +161,28 @@
         <option value="Fast Bowler">Fast Bowler</option>
         <option value="Leg Spin">Leg Spin</option>
         <option value="Medium Pacer">Medium Pacer</option>
-        <option value="All">All</option>
       </select>
 
       <label for="matches">Number Of Matches Played:</label>
-      <input type="number" id="matches" name="matches" required>
+      <input type="number" id="matches" min="0" max="1000" name="matches" required>
 
       <label for="runs">Runs Scored:</label>
-      <input type="number" id="runs" name="runs" required>
+      <input type="number" id="runs" min="0" max="10000" name="runs" required>
 
       <label for="wickets">Wickets Taken:</label>
-      <input type="number" id="wickets" name="wickets" required>
+      <input type="number" id="wickets" min="0" max="1000" name="wickets" required>
 
       <label for="economy">Economy Rate:</label>
-      <input type="number" id="economy" name="economy" step="0.01" required>
+      <input type="number" id="economy" min="0" max="100" name="economy" step="0.01" required>
 
       <label for="average">Batting Average (Eg: 45.67):</label>
-      <input type="number" id="average" name="average" step="0.01" required>
+      <input type="number" id="average" name="average"  min="0" max="600"  step="0.01" required>
 
       <label for="strike_rate">Batting Strike Rate (Eg: 145.79):</label>
-      <input type="number" id="strike_rate" name="strike_rate" step="0.01" required>
+      <input type="number" id="strike_rate" name="strike_rate" min="0" max="600"  step="0.01" required>
+
+      <label for="best_bowling">Highest Score:</label>
+      <input type="number" id="highest_score"  min="0" max="1000" name="highest_score" required>
 
       <label for="best_bowling">Best Bowling Figures:</label>
       <input type="text" id="best_bowling" name="best_bowling" placeholder="e.g. 5/24" required>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Player Profiles | Cricket Talent Hub</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-image: url("profile-bg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    nav ul li {
+      font-weight: 400;
+      border: 2px solid white;
+      border-radius: 40px;
+      padding: 10px 20px;
+      background-color: black;
+    }
+
+    nav ul li:hover {
+      background-color: gray;
+    }
+
+    li a {
+      text-decoration: none;
+      color: white;
+    }
+    li a:hover{
+   background-color: gray;
+    }
+    .selector {
+      margin-bottom: 20px;
+    }
+
+    .player-card {
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 15px;
+      width: 300px;
+    }
+
+    .player-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .players {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+    }
+    h2{
+      display: flex;
+      justify-content: center;
+      position: relative;
+      bottom: 30px;
+    }
+    select{
+      position: relative;
+      left:650px;
+      border: 2px solid black;
+      background-color: black;
+      border-radius: 20px;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+
+    }
+.profile{
+  position: relative;
+  top:100px;
+}
+button{
+  cursor: pointer;
+}
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="login.php">Login</a></li>
+          <li><a href="About.html">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <h2>Choose Category to View Profiles</h2>
+  <div class="selector">
+    <select id="categorySelect">
+      <option value="">-- Select Category --</option>
+      <option value="batsman">Batsman</option>
+      <option value="bowler">Bowler</option>
+      <option value="allrounder">Allrounder</option>
+      <option value="wicketkeeper">Wicketkeeper</option>
+    </select>
+  </div>
+
+  <div class="players" id="playerContainer"></div>
+
+<div class="profile">
+  <script>
+    document.getElementById('categorySelect').addEventListener('change', function () {
+      const category = this.value;
+      if (category) {
+        fetch(`profile.php?category=${category}`)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('playerContainer').innerHTML = data;
+          });
+      } else {
+        document.getElementById('playerContainer').innerHTML = "";
+      }
+    });
+  </script>
+
+</div>
+
+</body>
+
+</html>

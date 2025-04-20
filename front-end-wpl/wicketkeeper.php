@@ -19,11 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $batting_style = $_POST['style'];
         $matches = $_POST['matches'];
         $runs = $_POST['runs'];
-        $average = $_POST['average'];
-        $centuries = $_POST['centuries'];
-        $half_centuries = $_POST['half_centuries'];
+        $dismissals = $_POST['wickets_behind_stumps'];
+        $batting_average = $_POST['batting_average'];
         $strike_rate = $_POST['strike_rate'];
-        $highest_score = $_POST['heighest_score'];
+        $highest_score = $_POST['highest_score'];
 
         // Handle image upload
         $image_link = '';
@@ -37,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        // Prepare SQL query
-        $sql = "INSERT INTO Batsman (name, age, city, club_name, role, batting_style, matches, runs, average, centuries, half_centuries, strike_rate, highest_score, image_link)
-                VALUES (:name, :age, :city, :club_name, :role, :batting_style, :matches, :runs, :average, :centuries, :half_centuries, :strike_rate, :highest_score, :image_link)";
+        // Prepare SQL query for Wicketkeeper
+        $sql = "INSERT INTO Wicketkeeper (name, age, city, club_name, role, batting_style, matches, runs, dismissals, batting_average, strike_rate, highest_score, image_link)
+                VALUES (:name, :age, :city, :club_name, :role, :batting_style, :matches, :runs, :dismissals, :batting_average, :strike_rate, :highest_score, :image_link)";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute([
@@ -51,20 +50,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ':batting_style' => $batting_style,
             ':matches' => $matches,
             ':runs' => $runs,
-            ':average' => $average,
-            ':centuries' => $centuries,
-            ':half_centuries' => $half_centuries,
+            ':dismissals' => $dismissals,
+            ':batting_average' => $batting_average,
             ':strike_rate' => $strike_rate,
             ':highest_score' => $highest_score,
             ':image_link' => $image_link
         ]);
 
-        // Get the last inserted ID (optional)
-        $last_id = $conn->lastInsertId("batsman_id_seq");
+        // Get the last inserted ID (adjust sequence name if needed)
+        $last_id = $conn->lastInsertId("wicketkeeper_id_seq");
 
         // Redirect to profile page
         header("Location: profile.html?id=" . $last_id);
         exit;
+
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }

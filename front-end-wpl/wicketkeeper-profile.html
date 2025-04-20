@@ -125,7 +125,7 @@
       <input type="text" id="name" name="name" required>
 
       <label for="age">Age:</label>
-      <input type="number" id="age" name="age" required>
+      <input type="number" id="age" min="0" max="100" name="age" required>
       
       <label for="location">City / Location:</label>
       <input type="text" id="location" name="location" required>
@@ -147,19 +147,23 @@
       </select>
 
       <label for="matches">Number Of Matches Played:</label>
-      <input type="number" id="matches" name="matches" required>
+      <input type="number" id="matches" min="0" max="500" name="matches" required>
 
       <label for="runs">Runs Scored:</label>
-      <input type="number" id="runs" name="runs" required>
+      <input type="number" id="runs" name="runs" min="0" max="10000" required>
 
       <label for="wickets_behind_stumps">Total Dismissals (Catches, Stumpings, etc.):</label>
-      <input type="number" id="wickets_behind_stumps" name="wickets_behind_stumps" required>
+      <input type="number" id="wickets_behind_stumps" min="0" max="1000" name="wickets_behind_stumps" required>
 
-      <label for="average">Batting Average (Eg: 45.67):</label>
-      <input type="number" id="average" name="average" step="0.01" required>
+      <label for="batting_average">Batting Average (Eg: 45.67):</label>
+      <input type="number" id="batting_average" name="batting_average" min="0" max="1000" step="0.01" required>
 
       <label for="strike_rate">Batting Strike Rate (Eg: 145.79):</label>
-      <input type="number" id="strike_rate" name="strike_rate" step="0.01" required>
+      <input type="number" id="strike_rate" name="strike_rate" min="0" max="1000" step="0.01" required>
+
+      <label for="highest_score">Highest Score:</label>
+      <input type="number" id="highest_score" name="highest_score" min="0" max="1000" required>
+
 
       <label for="image_link">Upload Your Image:</label>
       <input type="file" name="image" accept="image/*" required>

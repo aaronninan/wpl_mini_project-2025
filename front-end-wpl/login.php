@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         header("Location: allrounder-profile.html");
                         break;
                     case 'wicket-keeper':
-                        header("Location: wicket-keeper-profile.html");
+                        header("Location: wicketkeeper-profile.html");
                         break;
                         case 'scout':
                           header("Location: profile.html");
@@ -273,7 +273,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <nav>
           <ul>
           <li><a href="home.html">Home</a></li>
-          <li><a href="profile.php"> Profiles</a></li>
+          <li><a href="login.php"> Profiles</a></li>
           <li><a href="About.html"> About Us</a></li>
         </ul>
       </nav>

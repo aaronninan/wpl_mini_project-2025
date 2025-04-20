@@ -117,8 +117,6 @@ button{
       <ul>
         <li><a href="home.html">Home</a></li>
 
-        <li><a href="login.php">Login</a></li>
-
         <li><a href="profile.html">Profile</a></li>
 
         <li><a href="About.html">About Us</a></li>
@@ -138,7 +136,7 @@ button{
       <input type="text" id="name" name="name" required>
 
       <label for="age">Age:</label>
-      <input type="number" id="age" name="age" required>
+      <input type="number" id="age" name="age" min="0" max="100" required>
       
       <label for="location">City / Location:</label>
       <input type="text" id="location" name="location" required>
@@ -162,25 +160,25 @@ button{
 
 
       <label for="matches">Number Of Matches Played:</label>
-      <input type="number" id="matches" min="0" name="matches" required>
+      <input type="number" id="matches" min="0" max="1000" name="matches" required>
 
       <label for="runs">Runs Scored:</label>
-      <input type="number" id="runs" min="0" name="runs" required>
+      <input type="number" id="runs" min="0" max="100000" name="runs" required>
 
       <label for="average"> Batting Average ( Eg :- 45.67 ):</label>
-      <input type="number" id="average" min="0" name="average" step="0.01">
+      <input type="number" id="average" min="0" max="1000" name="average" step="0.01">
 
       <label for="centuries">Number Of Centuries:</label>
-      <input type="number" id="centuries" min="0" name="centuries" required>
+      <input type="number" id="centuries" min="0" max="100" name="centuries" required>
 
       <label for="half_centuries">Number Of Half Centuries:</label>
-      <input type="number" id="half_centuries"min="0"  name="half_centuries" required>
+      <input type="number" id="half_centuries"min="0"  max="100" name="half_centuries" required>
 
       <label for="strike_rate"> Strike Rate ( Eg :- 145.79 ):</label>
-      <input type="number" id="strike_rate" min="0" name="strike_rate" step="0.01">
+      <input type="number" id="strike_rate" min="0" name="strike_rate" max="600" step="0.01">
 
       <label for="heighest_score">Highest Score:</label>
-      <input type="number" id="heighest_score" min="0" name="heighest_score" required>
+      <input type="number" id="heighest_score" min="0" max="1000"name="heighest_score" required>
 
    <label for="image_link">Upload Your Image:</label>
         <input type="file" name="image" accept="image/*" required>

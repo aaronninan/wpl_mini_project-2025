@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Talent Registration - Cricket Talent Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    *{
+    * {
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: Arial, sans-serif;
       background-image: url("profile.jpg");
@@ -17,7 +19,8 @@
       background-repeat: no-repeat;
       color: white;
       height: 155vh;
-     }
+    }
+
     .form-container {
       /* position: absolute; */
       max-width: 600px;
@@ -26,67 +29,80 @@
       border: 5px solid black;
       border-radius: 10px;
       margin: auto;
-      background-color:rgba(0 0 0 0.2);
+      background-color: rgba(0 0 0 0.2);
       border-radius: 20px;
       box-shadow: 0 50px 50px 10px;
       position: relative;
       bottom: 5px;
-      left:50px;
-  
+      left: 50px;
+
     }
+
     h2 {
       text-align: center;
       margin-bottom: 20px;
       color: #333;
     }
-    input, select, textarea {
+
+    input,
+    select,
+    textarea {
       width: 100%;
       padding: 10px;
       margin: 10px 0 15px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
+
     label {
       font-weight: bold;
     }
-    h2{
+
+    h2 {
       position: relative;
-      top:-20px;
+      top: -20px;
       font-weight: bolder;
       color: white;
     }
-    select{
+
+    select {
       width: 625px;
     }
-    .in input{
+
+    .in input {
       border: 2px solid white;
     }
+
     .nav ul {
       display: flex;
       list-style: none;
-      gap:10px;
-     }
-    .nav li{
-  color: white;
-  font-weight: 400;
-  border: 2px solid white;
-  border-radius: 40px;
-  padding: 10px 20px;
-  background-color: black;
-  margin-top: 20px;
-  margin-left: 10px;
-}
-.nav li:hover{
-  background-color: gray;
- 
-}
-a{
-  list-style: none;
-  text-decoration: none;
-  color: white;
-}
-.click button{
-  background-color: #28a745;
+      gap: 10px;
+    }
+
+    .nav li {
+      color: white;
+      font-weight: 400;
+      border: 2px solid white;
+      border-radius: 40px;
+      padding: 10px 20px;
+      background-color: black;
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+
+    .nav li:hover {
+      background-color: gray;
+
+    }
+
+    a {
+      list-style: none;
+      text-decoration: none;
+      color: white;
+    }
+
+    .click button {
+      background-color: #28a745;
       color: white;
       cursor: pointer;
       width: 100%;
@@ -96,18 +112,21 @@ a{
       border: 2px solid black;
       display: flex;
       justify-content: center;
-}
-button{
-  cursor: pointer;
-  border: none;
-}
-.click button:hover{
-  background-color: #78bd88;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+    }
+
+    .click button:hover {
+      background-color: #78bd88;
 
 
-}
+    }
   </style>
 </head>
+
 <body>
   <div class="nav">
     <nav>
@@ -129,8 +148,8 @@ button{
 
 
 
-    <form action="profile.php" method="POST" enctype="multipart/form-data">
-      
+    <form action="scout.php" method="POST" enctype="multipart/form-data">
+
       <!-- Email and Password Fields -->
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
@@ -147,19 +166,23 @@ button{
 
       <label for="role">Role:</label>
       <select id="role" name="role" required>
-        <option value="scout">Scout</option>
+        <option value="Scout">Scout</option>
       </select>
+      
+
+
 
       <label for="location">City/Location:</label>
       <input type="text" id="location" name="location" required>
+
       <label for="notes">Additional Notes (optional):</label>
       <textarea id="notes" name="notes" rows="4" placeholder="Write anything you’d like to share..."></textarea>
-<div class="click">
-    <button type="submit">Register Talent</button>
-  </div>
-     
+      <div class="click">
+        <button type="submit">Register Talent</button>
+      </div>
+
     </form>
   </div>
 </body>
-</html>
 
+</html>
