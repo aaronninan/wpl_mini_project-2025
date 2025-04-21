@@ -63,7 +63,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $last_id = $conn->lastInsertId("batsman_id_seq");
 
         // Redirect to profile page
-        header("Location: profile.html?id=" . $last_id);
+        echo "<script>
+        alert('Profile created successfully!');
+        window.location.href = 'profile.html?id=$last_id';
+    </script>";
         exit;
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();

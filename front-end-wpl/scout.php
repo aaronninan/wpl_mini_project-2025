@@ -32,7 +32,7 @@ try {
     if ($checkStmt->rowCount() > 0) {
         echo "<script>
             alert('This email is already registered. Please use a different email.');
-            window.location.href = 'scout.html'; // Replace with your actual form file
+            window.location.href = 'scout.html'; 
         </script>";
         exit();
     }
@@ -70,7 +70,7 @@ try {
 
     echo "<script>
         alert('Scout registered successfully!');
-        window.location.href = 'profile.html';
+        window.location.href = 'login.php';
     </script>";
 }
 catch (PDOException $e) {

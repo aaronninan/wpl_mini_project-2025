@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $stmt_user->bindParam(':role', $role);
 
                 if ($stmt_user->execute()) {
-                    $success_message = "Profile created successfully!";
+                    $success_message = "Registered Successfully!";
                 } else {
                     $errors[] = "Profile was created, but failed to save login credentials.";
                 }
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <a href="create-profile.html">Go back to registration form</a>
     <?php elseif (!empty($success_message)): ?>
       <div class="success"><?php echo htmlspecialchars($success_message); ?></div>
-      <a href="home.html">Go to Home</a>
+      <a href="login.php">Login To Profile</a>
     <?php endif; ?>
   </div>
 </body>

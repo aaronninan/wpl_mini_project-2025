@@ -29,12 +29,55 @@
             border: 2px solid black;
             margin-bottom: 15px;
         }
-        .info p { margin: 6px 0; }
-        h3 { margin-top: 20px; color: #2c3e50; }
+        .info p {
+             margin: 6px 0; 
+            }
+        h3 { 
+            margin-top: 20px; color: #2c3e50; 
+        }
+
+     nav ul li {
+      font-weight: 400;
+      border: 2px solid white;
+      border-radius: 40px;
+      padding: 10px 20px;
+      background-color: black;
+    }
+
+    nav ul li:hover {
+      background-color: gray;
+    }
+
+    li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    li a:hover {
+      background-color: gray;
+    }
+    .nav{
+        display: inline-block;
+    }
+    nav ul{
+      list-style:none;
+        display:flex;
+        gap:20px;
+        margin: 0;
+        padding: 0;
+
+    }
     </style>
 </head>
 <body>
-
+<div class="nav">
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="About.html">About Us</a></li>
+    </ul>
+  </nav>
+</div>
 <?php
 $host = "localhost";
 $port = "5432";
@@ -69,7 +112,7 @@ if (!$result || pg_num_rows($result) === 0) {
 
 $row = pg_fetch_assoc($result);
 ?>
-
+<div class="all">
 <div class="profile-card">
     <img src="<?= htmlspecialchars($row['image_link']) ?>" alt="<?= htmlspecialchars($row['name']) ?>">
     <h3><?= htmlspecialchars($row['name']) ?></h3>
@@ -127,5 +170,7 @@ if ($category == 'wicketkeeper') {
 ?>
 
 </div>
+</div>
+
 </body>
 </html>

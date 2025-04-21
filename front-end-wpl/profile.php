@@ -23,7 +23,6 @@
         </style>
     </head>
     <body>
-        
    
 <?php
 $host = "localhost";
